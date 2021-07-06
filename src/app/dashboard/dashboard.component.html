@@ -1,0 +1,234 @@
+<div class="outerbox">
+
+  <div class="box1">
+
+    <mat-toolbar color="white">
+      <span> <img src="assets/India.png" class="img"> India</span>
+    </mat-toolbar>
+  </div>
+
+
+
+
+
+
+
+  <div class="box2">
+    <div class="icon">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" id="home-icon">home</mat-icon>
+      <Div class="homewords">India</Div>
+    </div>
+
+    <mat-card class="selectcard">
+    <div class="select">
+    <div class="selected">
+      <mat-form-field appearance="outline">
+        <mat-label>states</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option>None</mat-option>
+          <mat-option  (click)="distric(state)"   *ngFor="let  state of states"  [value]="state">{{state}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="selected">
+      <mat-form-field appearance="outline">
+        <mat-label>distric</mat-label>
+        <mat-select >
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let  element of distr" [value]="element">{{element}}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</mat-card>
+  </div>
+
+
+
+
+
+
+  <div class="box3">
+    <div class="matcard" id="card1">
+      <mat-card class="maat">
+        <div class="imagefileoutside">
+      <div class="imagefile"> <img src="assets/vac.png"> </div>
+        </div>
+
+        <div class="textfile">
+          <div class='todaydata'>
+            <div class="vaccination">
+              Total Vaccination Doses
+              <mat-icon [matMenuTriggerFor]="menu" id="info-icon">info</mat-icon>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item class="i-data">Total vaccination conducting till date</button>
+              </mat-menu>
+            </div>
+            <div class="">Today</div>
+          </div>
+           <div class="totalsites">Data1</div>
+         <div class='forsitesmargin'>
+           <div class="sitespecific">vaccine18:</div>
+
+           <div class="sitespecific">vaccine45:</div>
+        </div>
+        </div>
+      </mat-card>
+    </div>
+
+
+    <div class="matcard" id="card2">
+      <mat-card class="maat">
+        <div class="imagefileoutside">
+      <div class="imagefile"> <img src="assets/sites.png"> </div>
+        </div>
+        <div class="textfile">
+          site conducting  Vaccinations
+          <mat-icon [matMenuTriggerFor]="menu" id="info-icon">info</mat-icon>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item class="i-data">Vaccination Trends for last 30 days</button>
+          </mat-menu>
+           <div class="totalsites">{{totalsiteconducting}}</div>
+         <div class='forsitesmargin'>
+           <div class="sitespecific">Government:{{govtsite}}</div>
+
+           <div class="sitespecific">Private:{{privatesite}}</div>
+        </div>
+        </div>
+      </mat-card>
+    </div>
+
+     <div class="matcard" id="card3">
+      <mat-card class="maat">
+        <div class="imagefileoutside">
+      <div class="imagefile"> <img src="assets/people.png"> </div>
+        </div>
+        <div class="textfile">
+          Total Registrations
+          <mat-icon [matMenuTriggerFor]="menu" id="info-icon">info</mat-icon>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item class="i-data">Vaccination Trends for last 30 days</button>
+          </mat-menu>
+           <div class="totalsites">{{totalRegistrationdata}}</div>
+         <div class='forsitesmargin'>
+           <div class="sitespecific">Government:{{govttotaleighteen}}</div>
+
+           <div class="sitespecific">Private:{{ privatetotalighteen}}</div>
+        </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="box4">
+    <mat-card  class="matcardbox4">
+
+      <div>
+        Vaccination Trends
+        <mat-icon [matMenuTriggerFor]="menu" id="info-icon">info</mat-icon>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item class="i-data">Vaccination Trends fpr last 30 days</button>
+        </mat-menu>
+      </div>
+
+      <mat-card  class="linegraphcard">
+      <div class="graph">
+
+          <div class="graphdoses">
+            <mat-tab-group>
+              <mat-tab label="by doses"   > g1</mat-tab>
+              <mat-tab label="by age">g2</mat-tab>
+            </mat-tab-group>
+          </div>
+          <div class="graphdays">
+            <mat-tab-group>
+              <mat-tab label="today" class="todaytabgroup">
+
+   <div>
+
+     <div  class="linegraphplot">
+
+       <canvas #linegraph  >{{chart}}</canvas>
+
+      </div>
+
+    </div>
+
+          </mat-tab>
+              <mat-tab label="last 30 days"  ><canvas #linegraph  >{{chart}}</canvas></mat-tab>
+              <mat-tab label="all" class="linegraphplot">
+                <div>
+                 <canvas #linegraph2  >{{chartA}}</canvas>
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+      </mat-card>
+    </mat-card>
+
+      <div class="graph"></div>
+    </div>
+    <div></div>
+
+
+
+
+
+
+
+
+  <div class="box5">
+    <div class="matcardbox5" id="card1">
+      <mat-card><div> <canvas #piechart  >{{chart1}}</canvas></div></mat-card>
+    </div>
+    <div class="matcardbox5" id="card2">
+      <mat-card><div>
+        <canvas #donutchart  >{{chart2}}</canvas>
+
+      </div>
+    </mat-card>
+    </div>
+    <div class="matcardbox5" id="card3">
+      <mat-card><table matSort (matSortChange)="sortData($event)">
+        <tr>
+          <th mat-sort-header="name">State</th>
+          <th mat-sort-header="calories">Today</th>
+          <th mat-sort-header="fat">Total</th>
+
+        </tr>
+
+        <tr *ngFor="let dessert of sortedData">
+          <td>{{dessert.name}}</td>
+          <td>{{dessert.calories}}</td>
+          <td>{{dessert.fat}}</td>
+          <td>{{dessert.carbs}}</td>
+          <td>{{dessert.protein}}</td>
+        </tr>
+      </table></mat-card>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="box6">
+    <div class="matcardbox6" id="card2">
+      <mat-card>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae in omnis eveniet animi
+        consequuntur, modi beatae officia cumque accusantium ab autem sed fuga ut quam nesciunt ad optio enim veritatis
+        nam id?</mat-card>
+    </div>
+    <div class="matcardbox6" id="card3">
+      <mat-card>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates suscipit, magnam nam harum pariatur
+        reprehenderit ducimus odit omnis numquam repellendus quibusdam! Excepturi aliquid incidunt laborum blanditiis
+        aliquam nam esse numquam maxime, quod non!</mat-card>
+    </div>
+  </div>
+
+
+</div>
+

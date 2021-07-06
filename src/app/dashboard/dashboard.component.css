@@ -1,0 +1,153 @@
+
+.img{
+  height:8.5vh;
+  width: 6vw;
+  }
+  #home-icon {
+    font-size: 50px;
+    margin-top: 15px;
+  }
+  .box2{
+    display: flex;
+    justify-content: space-between;
+   box-sizing: border-box;
+   font-size:1rem;
+
+  }
+
+  .selected{
+    margin:2.0px;
+    font-size: 0.75rem;
+    width: 50%;
+
+   padding:0;
+
+  }
+
+  .select{
+    display: flex;
+    height:2.5rem;
+    padding: 0;
+    margin-top:0.5px ;
+    margin-bottom: 1px;
+    }
+
+   .selectcard{
+    height:60% !important;
+
+    margin-right:1%;
+   }
+  .icon{
+    margin-left: 5px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .box3{
+    display: flex;
+    justify-content: space-evenly;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  width:100%;
+  height:10rem;
+  }
+
+  .box5{
+    display: flex;
+    justify-content: space-around;
+  margin:3px;
+  }
+  #info-icon{
+    font-size: 20px;
+    border-radius: 10%;
+  }
+  .homewords{
+    margin-left: 25px;
+    margin-top: 38px;
+    font:bold;
+    font-size: 14;
+  }
+
+  img{
+    border-radius:50%;
+    font-size:25px;
+  }
+  .matcard{
+    width:32% !important;
+    height:100%;
+
+  }
+  .textfile{
+    width:80%;
+    font: bold;
+    color:gray;
+
+  }
+
+  .imagefile img{
+    width:2rem;
+    height:2rem;
+  }
+  .imagefile{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width:2rem;
+   height:2rem;
+   overflow: hidden;
+   border-radius:50%;
+   background-color: aquamarine;
+
+  }
+
+  .box3inner{
+    display:flex;
+    width:100%;
+  }
+  .imagefileoutside{
+    height:100%;
+
+
+  }
+  .maat{
+    height:7.5rem !important;
+    display: flex;
+
+
+  }
+  .forsitesmargin{
+    display: flex;
+    justify-content: space-around;
+    margin-top:1.5rem;
+  }
+  .outerbox{
+    background-color:rgba(210, 226, 231, 0.897);
+  }
+  .selectcard{
+    display: flex;
+    justify-content:space-around;
+    height: min-content;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+
+  }
+  .graph{
+    display: flex;
+    justify-content:space-between;
+  }
+.todaydata{
+  display: flex;
+  justify-content: space-around;
+}
+
+.linegraphplot{
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  height: 300px;
+  width: 300px;
+}
+
